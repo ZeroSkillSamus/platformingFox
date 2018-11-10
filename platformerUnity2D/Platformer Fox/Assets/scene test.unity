@@ -113,6 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &73481145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73481146}
+  m_Layer: 8
+  m_Name: checkIfGrounded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73481146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73481145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.161, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 742570876}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &114193190
 Prefab:
   m_ObjectHideFlags: 0
@@ -1080,6 +1108,7 @@ Transform:
   m_Children:
   - {fileID: 1331119551}
   - {fileID: 1934041732}
+  - {fileID: 73481146}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1164,6 +1193,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1934041732}
   m_CeilingCheck: {fileID: 1331119551}
   m_CrouchDisableCollider: {fileID: 742570879}
+  m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1208,9 +1238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 742570880}
-  runSpeed: 50
   joyStick: {fileID: 799304277}
-  rb: {fileID: 0}
+  checkIfGrounded: {fileID: 73481145}
+  runSpeed: 50
 --- !u!95 &742570882
 Animator:
   serializedVersion: 3
