@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 
-
+		 
 		if (Input.GetButtonDown ("Crouch") && anim.GetBool("isJumping")==false) 
 		{
 			crouch = true;
@@ -85,5 +85,14 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move (horizontalMove * Time.fixedDeltaTime,crouch,jump);
 	    
 		jump = false;
+	}
+
+
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		if (col.transform.tag == "MovingPlatform") 
+		{
+			transform.parent = col.transform;
+		}
 	}
 }
