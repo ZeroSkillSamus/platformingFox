@@ -3575,6 +3575,7 @@ MonoBehaviour:
   platForm: {fileID: 1334319348}
   startPoint: {fileID: 256520141}
   endPoint: {fileID: 969104707}
+  speedOfPlatform: 0.2
 --- !u!212 &1334319352
 SpriteRenderer:
   m_ObjectHideFlags: 0

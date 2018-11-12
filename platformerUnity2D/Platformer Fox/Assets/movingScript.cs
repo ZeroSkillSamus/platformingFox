@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class movingScript : MonoBehaviour {
 
+
 	Vector3 tempPos;
 	public GameObject platForm;
 	public GameObject startPoint;
 	public GameObject endPoint;
+	public float speedOfPlatform;
+
 	bool isOnEndPoint = false;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -18,8 +22,9 @@ public class movingScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		
 		if (isOnEndPoint == false) {
-			tempPos.x += .1f;
+			tempPos.x += speedOfPlatform;
 			platForm.transform.position = tempPos;
 			if (tempPos.x >= endPoint.transform.position.x) {
 				isOnEndPoint = true;
@@ -27,12 +32,13 @@ public class movingScript : MonoBehaviour {
 		} 
 		else 
 		{
-			tempPos.x -= .1f;
+			tempPos.x -= speedOfPlatform;
 			platForm.transform.position = tempPos;
 			if (tempPos.x <= startPoint.transform.position.x) 
 			{
 				isOnEndPoint = false;
 			}
 		}
+
 	}
 }
