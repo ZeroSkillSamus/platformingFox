@@ -87,12 +87,24 @@ public class PlayerMovement : MonoBehaviour {
 		jump = false;
 	}
 
-
+	//Checks to see if player is on the platform
+	//if it is then the player will stay on the platform
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.transform.tag == "MovingPlatform") 
 		{
 			transform.parent = col.transform;
+		}
+	}
+
+	//Checks to see if the player has exited the platform
+	//if the player is off sets the transform.parent = null
+	//which stops the player from moving along with platform
+	void OnCollisionExit2D(Collision2D col)
+	{
+		if (col.transform.tag == "MovingPlatform") 
+		{
+			transform.parent = null;
 		}
 	}
 }

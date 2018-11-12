@@ -5,7 +5,8 @@ using UnityEngine;
 public class movingScript : MonoBehaviour {
 
 
-	Vector3 tempPos;
+	Vector2 tempPos;
+
 	public GameObject platForm;
 	public GameObject startPoint;
 	public GameObject endPoint;
@@ -16,7 +17,7 @@ public class movingScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		tempPos = startPoint.transform.position;
+		tempPos = platForm.transform.position;
 	}
 	
 	// Update is called once per frame
