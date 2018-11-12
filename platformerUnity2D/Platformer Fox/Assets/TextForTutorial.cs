@@ -17,7 +17,6 @@ public class TextForTutorial : MonoBehaviour {
 		{
 			textToDisplay.Enqueue (sentence);
 		}
-		Debug.Log ("S");
 	}
 	
 	// Update is called once per frame
