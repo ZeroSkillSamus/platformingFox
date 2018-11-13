@@ -38,4 +38,5 @@ public class TextForTutorial : MonoBehaviour {
 			npcNameText.text = "NPC Name: Old Man Tutorial Guy";
 		}
 	}
+		
 }
