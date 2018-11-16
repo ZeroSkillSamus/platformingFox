@@ -15,11 +15,15 @@ public class displayPanelText : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D col)
+	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if (col.collider.name == "Player") 
+		if (collider.tag == "Player") 
 		{
-			Debug.Log ("Hello");
+			game.SetActive (true);
 		}
+	}
+	void OnTriggerExit2D(Collider2D collider)
+	{
+		game.SetActive (false);
 	}
 }
