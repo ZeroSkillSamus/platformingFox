@@ -11,7 +11,9 @@ public class PlayerMovement : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	public Joystick joyStick;
+
 	public GameObject checkIfGrounded;
+	public GameObject triggerObject;
 
 	float horizontalMove = 0f;
 	public float runSpeed = 40f;
@@ -86,7 +88,7 @@ public class PlayerMovement : MonoBehaviour {
 	    
 		jump = false;
 	}
-
+		
 	//Checks to see if player is on the platform
 	//if it is then the player will stay on the platform
 	void OnCollisionEnter2D(Collision2D col)
@@ -94,6 +96,11 @@ public class PlayerMovement : MonoBehaviour {
 		if (col.transform.tag == "MovingPlatform") 
 		{
 			transform.parent = col.transform;
+		}
+
+		if (col.transform.tag == "tutorialTrigger") 
+		{
+			triggerObject.SetActive (false);
 		}
 	}
 

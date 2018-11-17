@@ -113,6 +113,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &215779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215780}
+  - component: {fileID: 215781}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.57, y: -3.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1515307851}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b923d1a863f5954f98cfb8d5186f946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 1515307848}
+  panel: {fileID: 996641569}
+  text: {fileID: 0}
 --- !u!1 &36402021
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +521,7 @@ Prefab:
     - target: {fileID: 224070147403872398, guid: ce5089f3caa5bb042a4d4c23a427bc82,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224070147403872398, guid: ce5089f3caa5bb042a4d4c23a427bc82,
         type: 2}
@@ -1296,8 +1340,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 678376874}
-  - {fileID: 799304276}
   - {fileID: 996641570}
+  - {fileID: 799304276}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1754,11 +1798,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - It seems that I haven't introduced myself yet. Thats why you see the "???" next
-    to "NPC Name"
-  - 'My name is "Old Man Tutorial Guy". '
-  - I will be the one to teach you how to play the game.
-  - In order to start the training session jump over my head and begin the tutorial!!
+  - 'It seems '
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   dialogueNameText: {fileID: 530073140}
   npcNameText: {fileID: 630043658}
 --- !u!114 &678376876
@@ -2074,9 +2121,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09}
+  m_Offset: {x: -0.01, y: -0.09}
   serializedVersion: 2
-  m_Radius: 0.06616802
+  m_Radius: 0.06836478
 --- !u!50 &742570878
 Rigidbody2D:
   serializedVersion: 4
@@ -2190,6 +2237,7 @@ MonoBehaviour:
   controller: {fileID: 742570880}
   joyStick: {fileID: 799304277}
   checkIfGrounded: {fileID: 73481145}
+  triggerObject: {fileID: 1515307848}
   runSpeed: 50
 --- !u!95 &742570882
 Animator:
@@ -3014,7 +3062,7 @@ RectTransform:
   - {fileID: 1756281258}
   - {fileID: 1479064847}
   m_Father: {fileID: 624818956}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3033,11 +3081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - It seems that I haven't introduced myself yet. Thats why you see the "???" next
-    to "NPC Name"
-  - 'My name is "Old Man Tutorial Guy". '
-  - I will be the one to teach you how to play the game.
-  - In order to start the training session jump over my head and begin the tutorial!!
+  - 'It seems that there is a platform in your way. '
+  - 'In order to jump '
   dialogueNameText: {fileID: 1479064848}
   npcNameText: {fileID: 1756281259}
 --- !u!114 &996641572
@@ -3621,7 +3666,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1331119550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.052, z: 0}
+  m_LocalPosition: {x: 0, y: -0.0261, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 742570876}
@@ -4831,34 +4876,21 @@ GameObject:
   m_Component:
   - component: {fileID: 1515307851}
   - component: {fileID: 1515307850}
-  - component: {fileID: 1515307849}
   - component: {fileID: 1515307852}
   m_Layer: 0
-  m_Name: tileset-sliced_110
-  m_TagString: Untagged
+  m_Name: jumpTutorialTrigger
+  m_TagString: tutorialTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1515307849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1515307848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b923d1a863f5954f98cfb8d5186f946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  game: {fileID: 0}
 --- !u!212 &1515307850
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1515307848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4904,12 +4936,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1515307848}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.57, y: -3.26, z: 0}
-  m_LocalScale: {x: 6.4093285, y: 1.4734725, z: 1.4734725}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.027, z: 0}
+  m_LocalScale: {x: 6.4093285, y: 5.526995, z: 1.4734725}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 215780}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1515307852
 BoxCollider2D:
@@ -4920,10 +4952,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.23965974}
+  m_Offset: {x: 0, y: 0.02083978}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4934,7 +4966,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.52068055}
+  m_Size: {x: 1, y: 1.0416796}
   m_EdgeRadius: 0
 --- !u!1 &1529583634
 GameObject:
@@ -10464,8 +10496,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 36, y: -5, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 25
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -10473,8 +10505,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 37, y: -5, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 25
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -10482,8 +10514,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 38, y: -5, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 25
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -10491,8 +10523,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 39, y: -5, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 25
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -12014,7 +12046,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: cafe9533d6531be4c83cac63dd691784, type: 2}
-  - m_RefCount: 82
+  - m_RefCount: 78
     m_Data: {fileID: 11400000, guid: 84d6e2e2236c4e94db96d582282f32c7, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 20579e90ae17c6c4c9ab1cb1f1760092, type: 2}
@@ -12062,7 +12094,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f2aa557b9e7251e4ea9ee5ee614d3c1b, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 590248d3e63ccdd4eb23fd453f423eed, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 79d2c9c9b6b6acf4386c208b4222b135, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -12105,7 +12137,7 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 82
+  - m_RefCount: 78
     m_Data: {fileID: 21300002, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -12153,7 +12185,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 5
+  - m_RefCount: 9
     m_Data: {fileID: 21300004, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -12282,7 +12314,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -12810,7 +12842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2018053506
 SpriteRenderer:
   m_ObjectHideFlags: 0
