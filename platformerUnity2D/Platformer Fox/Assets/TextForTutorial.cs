@@ -8,10 +8,13 @@ public class TextForTutorial : MonoBehaviour {
 	private Queue<string> textToDisplay;
 	public Text dialogueNameText;
 	public Text npcNameText;
-
+	public GameObject npc;
+	public GameObject panel;
+	public GameObject nextNPC;
 	// Use this for initialization
 	void Start () 
 	{
+		
 		textToDisplay = new Queue<string> ();
 		foreach (string sentence in sentences) 
 		{
@@ -27,16 +30,22 @@ public class TextForTutorial : MonoBehaviour {
 
 	void displayThatText()
 	{
-		
-		if (Input.GetKeyDown (KeyCode.F) && this.textToDisplay.Count!=0) 
-		{
-			string s = textToDisplay.Dequeue();
-			dialogueNameText.text = s;
-		}
-		if (this.textToDisplay.Count == 0) 
+		if (this.textToDisplay.Count == 2) 
 		{
 			npcNameText.text = "NPC Name: Old Man Tutorial Guy";
 		}
+		if (Input.GetKeyDown (KeyCode.F) && this.textToDisplay.Count != 0) 
+		{
+			string s = textToDisplay.Dequeue ();
+			dialogueNameText.text = s;
+		} 
+		else if (this.textToDisplay.Count == 0) 
+		{
+			npc.SetActive (false);
+			panel.SetActive (false);
+			nextNPC.SetActive (true);
+		}
+
 	}
 		
 }

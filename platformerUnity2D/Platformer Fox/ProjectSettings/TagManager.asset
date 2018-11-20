@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovingPlatform
   - tutorialTrigger
+  - NPC
   layers:
   - Default
   - TransparentFX

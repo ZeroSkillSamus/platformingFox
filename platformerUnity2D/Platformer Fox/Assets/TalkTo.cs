@@ -14,7 +14,7 @@ public class TalkTo : MonoBehaviour {
 	{
 		var heading = (npc.transform.position - player.transform.position);
 		var distance = heading.magnitude;
-		if (distance < 2) {
+		if (distance < 3) {
 			panel.SetActive (true);
 		} else {
 			panel.SetActive (false);
