@@ -39,7 +39,7 @@ public class TextForTutorial : MonoBehaviour {
 			string s = textToDisplay.Dequeue ();
 			dialogueNameText.text = s;
 		} 
-		else if (this.textToDisplay.Count == 0) 
+		else if (this.textToDisplay.Count == 0 && Input.GetKeyDown(KeyCode.F)) 
 		{
 			npc.SetActive (false);
 			panel.SetActive (false);
