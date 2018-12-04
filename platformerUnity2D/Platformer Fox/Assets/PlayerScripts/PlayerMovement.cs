@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	private Animator anim;
 	private Rigidbody2D rb;
 	public bool allowJump;
+	public bool allowCrouch;
 	public Joystick joyStick;
 
 	public GameObject checkIfGrounded;
@@ -42,28 +43,31 @@ public class PlayerMovement : MonoBehaviour {
 //		Animator.SetFloat ("Speed",horizontalMove);
 
 		//this means that the player might have fallen off of a cliff
-		if (allowJump == true) {
 			if (controller.m_Grounded == false && jump == false) {
 				anim.SetBool ("isFalling", true);
 			} else {
 				anim.SetBool ("isFalling", false);
 			}
 
+		//restricts the person from jumping until they reach the certain tutorial guy
+		if (allowJump == true) 
+		{
 			if (Input.GetButtonDown ("Jump")) {
 				anim.SetBool ("isJumping", true);
 				jump = true;
 			}
 		}
 	
-
-		 
-		if (Input.GetButtonDown ("Crouch") && anim.GetBool("isJumping")==false) 
+		//restricts the player from crouching until they reach the certain part of tutorial
+		if (allowCrouch == true) 
 		{
-			crouch = true;
-		} 
-		else if (Input.GetButtonUp ("Crouch")) 
-		{
-			crouch = false;
+			if (Input.GetButtonDown ("Crouch") && anim.GetBool ("isJumping") == false) 
+			{
+				crouch = true;
+			} else if (Input.GetButtonUp ("Crouch"))
+			{
+				crouch = false;
+			}
 		}
 	
 
@@ -75,7 +79,9 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	public void onLanding()
 	{
+		//Debug.Log ("ss");
 		anim.SetBool ("isJumping", false);
+
 	}
 
 	void FixedUpdate()
