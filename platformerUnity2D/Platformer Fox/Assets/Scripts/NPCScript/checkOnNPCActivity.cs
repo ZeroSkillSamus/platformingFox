@@ -18,7 +18,7 @@ public class checkOnNPCActivity : MonoBehaviour {
 		}
 		if (thirdNPC.active == false && fourthNPC.active==true) 
 		{
-			Debug.Log ("ss");
+//			Debug.Log ("ss");
 			player.allowCrouch = true;
 		}
 	}

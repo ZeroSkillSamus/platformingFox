@@ -6,11 +6,15 @@ public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
 
+	public Transform target;
 
 	private Animator anim;
 	private Rigidbody2D rb;
 	public bool allowJump;
 	public bool allowCrouch;
+
+	private bool cutScene;
+
 	public Joystick joyStick;
 
 	public GameObject checkIfGrounded;
@@ -28,18 +32,32 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		cutScene = true;
+	}
+
+	public void setCutScene(bool cutscene)
+	{
+		this.cutScene = cutscene;
+	}
+
+	public bool getCutScene()
+	{
+		return this.cutScene;
 	}
 	// Update is called once per frame
 	void Update () 
 	{
+
 		/*
 		 * Right on keyboard equals 1 (D)
 		 * Left on keyboard equals -1 (A)
 		*/
 		//This is for keyboard
-		horizontalMove = Input.GetAxisRaw ("Horizontal") * runSpeed;
-		//horizontalMove = joyStick.Horizontal * runSpeed;
-		anim.SetFloat ("speed", Mathf.Abs (horizontalMove));
+		if (cutScene == false) {
+			horizontalMove = Input.GetAxisRaw ("Horizontal") * runSpeed;
+			//horizontalMove = joyStick.Horizontal * runSpeed;
+			anim.SetFloat ("speed", Mathf.Abs (horizontalMove));
+		}
 //		Animator.SetFloat ("Speed",horizontalMove);
 
 		//this means that the player might have fallen off of a cliff
