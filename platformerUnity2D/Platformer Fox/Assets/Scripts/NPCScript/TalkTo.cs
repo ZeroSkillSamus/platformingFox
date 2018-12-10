@@ -6,6 +6,7 @@ public class TalkTo : MonoBehaviour {
 	public GameObject player;
 	public GameObject npc;
 	public GameObject panel;
+	public Rigidbody2D rigid;
 	// Use this for initialization
 
 	
@@ -16,8 +17,12 @@ public class TalkTo : MonoBehaviour {
 		var distance = heading.magnitude;
 		if (distance < 3) {
 			panel.SetActive (true);
+			rigid.constraints = RigidbodyConstraints2D.FreezeAll;
+			//rigid.constraints = RigidbodyConstraints2D
+			//rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
 		} else {
 			panel.SetActive (false);
 		}
+
 	}
 }

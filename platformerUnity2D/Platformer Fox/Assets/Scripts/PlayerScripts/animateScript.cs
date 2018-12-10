@@ -23,7 +23,6 @@ public class animateScript : MonoBehaviour {
 			float step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, target.position, step);
 			anim.SetFloat ("speed", step);
-
 			checkDistance ();
 		}
 	}
@@ -34,7 +33,9 @@ public class animateScript : MonoBehaviour {
 		var distance = heading.magnitude;
 
 		if (distance < 2.8) {
+			//anim.SetBool ("isIdle", true);
 			player.setCutScene (false);
+
 		}
 	}
 

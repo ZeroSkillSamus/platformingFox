@@ -12,11 +12,11 @@ public class checkOnNPCActivity : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (secondNPC.active == false && firstNPC.active==false) 
+		if (secondNPC.activeSelf == false && firstNPC.activeSelf==false) 
 		{
 			player.allowJump = true;
 		}
-		if (thirdNPC.active == false && fourthNPC.active==true) 
+		if (thirdNPC.activeSelf == false && fourthNPC.activeSelf==true) 
 		{
 //			Debug.Log ("ss");
 			player.allowCrouch = true;

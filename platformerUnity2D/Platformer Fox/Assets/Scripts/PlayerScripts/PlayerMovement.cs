@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public CharacterController2D controller;
 
 	public Transform target;
+	public checkOnNPCActivity testNPC;
 
 	private Animator anim;
 	private Rigidbody2D rb;
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	float horizontalMove = 0f;
 	public float runSpeed = 40f;
-
+	public GameObject npc1;
 
 	bool jump = false;
 	bool crouch = false;
@@ -53,11 +54,15 @@ public class PlayerMovement : MonoBehaviour {
 		 * Left on keyboard equals -1 (A)
 		*/
 		//This is for keyboard
-		if (cutScene == false) {
-			horizontalMove = Input.GetAxisRaw ("Horizontal") * runSpeed;
+		if (cutScene == false && npc1.active==false) {
+			
 			//horizontalMove = joyStick.Horizontal * runSpeed;
-			anim.SetFloat ("speed", Mathf.Abs (horizontalMove));
+			horizontalMove = Input.GetAxisRaw ("Horizontal") * runSpeed;
 		}
+		if (npc1.active == false) {
+			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+		}
+		anim.SetFloat ("speed", Mathf.Abs (horizontalMove));
 //		Animator.SetFloat ("Speed",horizontalMove);
 
 		//this means that the player might have fallen off of a cliff
