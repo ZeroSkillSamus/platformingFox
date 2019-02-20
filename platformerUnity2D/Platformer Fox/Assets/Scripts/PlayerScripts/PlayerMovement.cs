@@ -54,15 +54,17 @@ public class PlayerMovement : MonoBehaviour {
 		 * Left on keyboard equals -1 (A)
 		*/
 		//This is for keyboard
-		if (cutScene == false && npc1.active==false) {
+		if (cutScene == false && npc1.active == false) {
 			
 			//horizontalMove = joyStick.Horizontal * runSpeed;
 			horizontalMove = Input.GetAxisRaw ("Horizontal") * runSpeed;
-		}
+			anim.SetFloat ("speed", Mathf.Abs (horizontalMove));
+		} 
 		if (npc1.active == false) {
+			Debug.Log ("test");
 			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 		}
-		anim.SetFloat ("speed", Mathf.Abs (horizontalMove));
+	//	Debug.Log (anim.GetFloat ("speed") + " " + this.cutScene);
 //		Animator.SetFloat ("Speed",horizontalMove);
 
 		//this means that the player might have fallen off of a cliff
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour {
 				crouch = false;
 			}
 		}
+
 	
 
 	}

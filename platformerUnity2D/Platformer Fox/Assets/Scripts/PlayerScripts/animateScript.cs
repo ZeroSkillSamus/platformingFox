@@ -9,7 +9,7 @@ public class animateScript : MonoBehaviour {
 	public float speed;
 	public PlayerMovement player;
 	public GameObject npc;
-//	public PlayerMovement player;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -21,9 +21,10 @@ public class animateScript : MonoBehaviour {
 	{
 		if (player.getCutScene() == true) {
 			float step = speed * Time.deltaTime;
+			anim.SetFloat ("speed", 22f);
 			transform.position = Vector3.MoveTowards (transform.position, target.position, step);
-			anim.SetFloat ("speed", step);
 			checkDistance ();
+			//Debug.Log (step);
 		}
 	}
 
@@ -35,7 +36,7 @@ public class animateScript : MonoBehaviour {
 		if (distance < 2.8) {
 			//anim.SetBool ("isIdle", true);
 			player.setCutScene (false);
-
+			anim.SetFloat ("speed", 0f);
 		}
 	}
 
