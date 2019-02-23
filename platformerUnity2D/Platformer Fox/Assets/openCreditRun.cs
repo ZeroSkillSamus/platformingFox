@@ -5,6 +5,7 @@ using UnityEngine;
 public class openCreditRun : MonoBehaviour {
 	public Transform target;
 	public Transform startPos;
+	public float x,y,z;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,8 +15,13 @@ public class openCreditRun : MonoBehaviour {
 	void Update () {
 		float step = 10 * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, step);
-		if (transform.position.y == target.position.y) {
-			transform.position = new Vector3 (startPos.transform.position.x, startPos.transform.position.y, startPos.transform.position.z);
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.tag == "Wall") {
+			transform.position = new Vector2 (x,y);
+			Debug.Log ("jere");
 		}
 	}
 }

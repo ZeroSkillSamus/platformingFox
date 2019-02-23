@@ -64,8 +64,6 @@ public class PlayerMovement : MonoBehaviour {
 			Debug.Log ("test");
 			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 		}
-	//	Debug.Log (anim.GetFloat ("speed") + " " + this.cutScene);
-//		Animator.SetFloat ("Speed",horizontalMove);
 
 		//this means that the player might have fallen off of a cliff
 			if (controller.m_Grounded == false && jump == false) {
